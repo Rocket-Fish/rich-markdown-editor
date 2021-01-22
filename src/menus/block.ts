@@ -22,6 +22,8 @@ const SSR = typeof window === "undefined";
 const isMac = !SSR && window.navigator.platform === "MacIntel";
 const mod = isMac ? "⌘" : "ctrl";
 
+import Heading4Icon from "./Heading4Icon";
+
 export default function blockMenuItems(
   dictionary: typeof baseDictionary
 ): MenuItem[] {
@@ -49,6 +51,30 @@ export default function blockMenuItems(
       icon: Heading3Icon,
       shortcut: "^ ⇧ 3",
       attrs: { level: 3 },
+    },
+    {
+      name: "heading",
+      title: dictionary.h4,
+      keywords: "h4 heading4",
+      icon: Heading3Icon,
+      shortcut: "^ ⇧ 4",
+      attrs: { level: 4 },
+    },
+    {
+      name: "heading",
+      title: dictionary.h5,
+      keywords: "h5 heading5",
+      icon: Heading3Icon,
+      shortcut: "^ ⇧ 5",
+      attrs: { level: 5 },
+    },
+    {
+      name: "heading",
+      title: dictionary.h6,
+      keywords: "h6 heading6",
+      icon: Heading3Icon,
+      shortcut: "^ ⇧ 6",
+      attrs: { level: 6 },
     },
     {
       name: "separator",
