@@ -14,15 +14,17 @@ import {
   WarningIcon,
   InfoIcon,
   LinkIcon,
+  LightBulbIcon,
+  BeakerIcon,
 } from "outline-icons";
 import { MenuItem } from "../types";
 import baseDictionary from "../dictionary";
 
+import HeaderIcon from "../components/HeaderIcon";
+
 const SSR = typeof window === "undefined";
 const isMac = !SSR && window.navigator.platform === "MacIntel";
 const mod = isMac ? "⌘" : "ctrl";
-
-import Heading4Icon from "./Heading4Icon";
 
 export default function blockMenuItems(
   dictionary: typeof baseDictionary
@@ -56,7 +58,7 @@ export default function blockMenuItems(
       name: "heading",
       title: dictionary.h4,
       keywords: "h4 heading4",
-      icon: Heading3Icon,
+      icon: HeaderIcon(4),
       shortcut: "^ ⇧ 4",
       attrs: { level: 4 },
     },
@@ -64,7 +66,7 @@ export default function blockMenuItems(
       name: "heading",
       title: dictionary.h5,
       keywords: "h5 heading5",
-      icon: Heading3Icon,
+      icon: HeaderIcon(5),
       shortcut: "^ ⇧ 5",
       attrs: { level: 5 },
     },
@@ -72,7 +74,7 @@ export default function blockMenuItems(
       name: "heading",
       title: dictionary.h6,
       keywords: "h6 heading6",
-      icon: Heading3Icon,
+      icon: HeaderIcon(6),
       shortcut: "^ ⇧ 6",
       attrs: { level: 6 },
     },
@@ -153,28 +155,28 @@ export default function blockMenuItems(
     {
       name: "container_notice",
       title: dictionary.tipNotice,
-      icon: StarredIcon,
+      icon: LightBulbIcon,
       keywords: "container_notice card suggestion tip",
       attrs: { style: "tip" },
     },
     {
       name: "container_notice",
       title: dictionary.importantNotice,
-      icon: StarredIcon,
+      icon: BeakerIcon,
       keywords: "container_notice card important",
       attrs: { style: "important" },
     },
     {
       name: "container_notice",
       title: dictionary.cautionNotice,
-      icon: StarredIcon,
+      icon: WarningIcon,
       keywords: "container_notice card caution",
       attrs: { style: "caution" },
     },
     {
       name: "container_notice",
       title: dictionary.warningNotice,
-      icon: WarningIcon,
+      icon: StarredIcon,
       keywords: "container_notice card error warning",
       attrs: { style: "warning" },
     },
