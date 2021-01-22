@@ -51,11 +51,15 @@ export const base = {
   blockToolbarHoverBackground: colors.greyLight,
   blockToolbarDivider: colors.greyMid,
 
-  noticeInfoBackground: "#F5BE31",
-  noticeInfoText: colors.almostBlack,
-  noticeTipBackground: "#9E5CF7",
+  noticeInfoBackground: "#EBEDF0",
+  noticeInfoText: colors.black,
+  noticeTipBackground: "#00A400",
   noticeTipText: colors.white,
-  noticeWarningBackground: "#FF5C80",
+  noticeImportantBackground: "#54C7EC",
+  noticeImportantText: colors.white,
+  noticeCautionBackground: "#FFB800",
+  noticeCautionText: colors.white,
+  noticeWarningBackground: "#FA383E",
   noticeWarningText: colors.white,
 };
 

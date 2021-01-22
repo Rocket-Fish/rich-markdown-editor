@@ -34,8 +34,6 @@ export const base = {
   hr: "Divider",
   image: "Image",
   imageUploadError: "Sorry, an error occurred uploading the image",
-  info: "Info",
-  infoNotice: "Info notice",
   link: "Link",
   linkCopied: "Link copied to clipboard",
   mark: "Highlight",
@@ -54,10 +52,18 @@ export const base = {
   strong: "Bold",
   subheading: "Subheading",
   table: "Table",
+
+  info: "Info",
+  infoNotice: "Info notice",
   tip: "Tip",
   tipNotice: "Tip notice",
+  important: "important",
+  importantNotice: "Important notice",
+  caution: "caution",
+  cautionNotice: "Caution notice",
   warning: "Warning",
   warningNotice: "Warning notice",
+
 };
 
 export default base;

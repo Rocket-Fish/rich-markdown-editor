@@ -1,6 +1,12 @@
 import { wrappingInputRule } from "prosemirror-inputrules";
 import toggleWrap from "../commands/toggleWrap";
-import { WarningIcon, InfoIcon, StarredIcon } from "outline-icons";
+import {
+  WarningIcon,
+  InfoIcon,
+  StarredIcon,
+  LightBulbIcon,
+  BeakerIcon,
+} from "outline-icons";
 import * as React from "react";
 import ReactDOM from "react-dom";
 import Node from "./Node";
@@ -9,8 +15,10 @@ export default class Notice extends Node {
   get styleOptions() {
     return Object.entries({
       info: this.options.dictionary.info,
-      warning: this.options.dictionary.warning,
       tip: this.options.dictionary.tip,
+      important: this.options.dictionary.important,
+      caution: this.options.dictionary.caution,
+      warning: this.options.dictionary.warning,
     });
   }
 
@@ -37,13 +45,17 @@ export default class Notice extends Node {
           getAttrs: (dom: HTMLDivElement) => ({
             style: dom.className.includes("tip")
               ? "tip"
+              : dom.className.includes("important")
+              ? "important"
+              : dom.className.includes("caution")
+              ? "caution"
               : dom.className.includes("warning")
               ? "warning"
               : undefined,
           }),
         },
       ],
-      toDOM: node => {
+      toDOM: (node) => {
         const select = document.createElement("select");
         select.addEventListener("change", this.handleStyleChange);
 
@@ -58,9 +70,13 @@ export default class Notice extends Node {
         let component;
 
         if (node.attrs.style === "tip") {
-          component = <StarredIcon color="currentColor" />;
-        } else if (node.attrs.style === "warning") {
+          component = <LightBulbIcon color="currentColor" />;
+        } else if (node.attrs.style === "important") {
+          component = <BeakerIcon color="currentColor" />;
+        } else if (node.attrs.style === "caution") {
           component = <WarningIcon color="currentColor" />;
+        } else if (node.attrs.style === "warning") {
+          component = <StarredIcon color="currentColor" />;
         } else {
           component = <InfoIcon color="currentColor" />;
         }
@@ -81,10 +97,10 @@ export default class Notice extends Node {
   }
 
   commands({ type }) {
-    return attrs => toggleWrap(type, attrs);
+    return (attrs) => toggleWrap(type, attrs);
   }
 
-  handleStyleChange = event => {
+  handleStyleChange = (event) => {
     const { view } = this.editor;
     const { tr } = view.state;
     const element = event.target;
@@ -114,7 +130,7 @@ export default class Notice extends Node {
   parseMarkdown() {
     return {
       block: "container_notice",
-      getAttrs: tok => ({ style: tok.info }),
+      getAttrs: (tok) => ({ style: tok.info }),
     };
   }
 }

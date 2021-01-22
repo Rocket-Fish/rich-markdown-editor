@@ -901,6 +901,23 @@ const StyledEditor = styled("div")<{
     }
   }
 
+  .notice-block.important {
+    background: ${props => props.theme.noticeImportantBackground};
+    color: ${props => props.theme.noticeImportantText};
+
+    a {
+      color: ${props => props.theme.noticeImportantText};
+    }
+  }
+  .notice-block.caution {
+    background: ${props => props.theme.noticeCautionBackground};
+    color: ${props => props.theme.noticeCautionText};
+
+    a {
+      color: ${props => props.theme.noticeCautionText};
+    }
+  }
+
   .notice-block.warning {
     background: ${props => props.theme.noticeWarningBackground};
     color: ${props => props.theme.noticeWarningText};
