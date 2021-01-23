@@ -139,7 +139,7 @@ export default class SelectionToolbar extends React.Component<Props> {
 
     return (
       <Portal>
-        <FloatingToolbar view={view} active={isActive(this.props)}>
+        <FloatingToolbar view={view} active={isActive(this.props)} className={'__floating_toolbar'}>
           {link && range ? (
             <LinkEditor
               dictionary={dictionary}

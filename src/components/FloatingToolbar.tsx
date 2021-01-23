@@ -11,6 +11,7 @@ type Props = {
   view: EditorView;
   children: React.ReactNode;
   forwardedRef?: React.RefObject<HTMLDivElement> | null;
+  className?: string;
 };
 
 const defaultPosition = {
@@ -172,6 +173,7 @@ function FloatingToolbar(props) {
           top: `${position.top}px`,
           left: `${position.left}px`,
         }}
+        className={props.className}
       >
         {position.visible && props.children}
       </Wrapper>
