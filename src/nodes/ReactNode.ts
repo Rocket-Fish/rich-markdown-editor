@@ -1,6 +1,8 @@
 // ts-ignore
 import Node from "./Node";
 // ts-ignore
+import React from 'react';
+// ts-ignore
 export default abstract class ReactNode extends Node {
 // ts-ignore
 abstract component({
