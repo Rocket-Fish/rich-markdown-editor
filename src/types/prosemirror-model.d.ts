@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
-import model from "prosemirror-model";
-
 declare module "prosemirror-model" {
+  /* eslint-disable no-unused-vars */
+  import model from "prosemirror-model";
   interface Slice {
     // this method is missing in the DefinitelyTyped type definition, so we
     // must patch it here.
