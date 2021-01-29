@@ -1,10 +1,18 @@
+// ts-ignore
 import Node from "./Node";
-
+// ts-ignore
 export default abstract class ReactNode extends Node {
-  abstract component({
-    node,
-    isSelected,
-    isEditable,
-    innerRef,
-  }): React.ReactElement;
+// ts-ignore
+abstract component({
+// ts-ignore
+node,
+// ts-ignore
+isSelected,
+// ts-ignore
+isEditable,
+// ts-ignore
+innerRef,
+// ts-ignore
+}): React.ReactElement;
+// ts-ignore
 }
