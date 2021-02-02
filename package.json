@@ -1,5 +1,5 @@
 {
-  "name": "rich-markdown-editor",
+  "name": "@loginid/rich-markdown-editor",
   "description": "A rich text editor with Markdown shortcuts",
   "version": "11.1.6",
   "main": "dist/index.js",
