@@ -68,6 +68,7 @@ import Placeholder from "./plugins/Placeholder";
 import SmartText from "./plugins/SmartText";
 import TrailingNode from "./plugins/TrailingNode";
 import MarkdownPaste from "./plugins/MarkdownPaste";
+import DiffRed from "./marks/DiffRed";
 
 export { schema, parser, serializer } from "./server";
 
@@ -270,6 +271,7 @@ class RichMarkdownEditor extends React.PureComponent<Props, State> {
         new TableRow(),
         new Bold(),
         new Code(),
+        new DiffRed(),
         new Highlight(),
         new Italic(),
         new TemplatePlaceholder(),
@@ -1047,6 +1049,14 @@ const StyledEditor = styled("div")<{
 
     a {
       color: ${props => props.theme.textHighlightForeground};
+    }
+  }
+
+  mark.red {
+    color: ${props => props.theme.textHighlightRedForeground};
+    background: ${props => props.theme.textHighlightRed};
+    a {
+      color: ${props => props.theme.textHighlightRedForeground};
     }
   }
 

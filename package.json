@@ -18,7 +18,8 @@
     "static": "example/dist"
   },
   "dependencies": {
-    "copy-to-clipboard": "^3.0.8",
+    "copy-to-clipboard": "^3.3.1",
+    "core-js": "^3.8.3",
     "lodash": "^4.17.11",
     "markdown-it-container": "^3.0.0",
     "outline-icons": "^1.23.0",
@@ -46,8 +47,8 @@
     "typescript": "3.7.5"
   },
   "peerDependencies": {
-    "react": "^16.0.0 || ^17.0.0",
-    "react-dom": "^16.0.0 || ^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
