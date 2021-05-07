@@ -1,7 +1,7 @@
 {
   "name": "@loginid1/rich-markdown-editor",
   "description": "LoginID fork of outline/rich-markdown-editor. A rich text editor with Markdown shortcuts",
-  "version": "11.1.6a",
+  "version": "11.1.6-b",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "license": "BSD-3-Clause",

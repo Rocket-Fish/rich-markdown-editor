@@ -903,9 +903,9 @@ const StyledEditor = styled("div")<{
     }
   }
 
-  .notice-block.important {
-    background: ${props => props.theme.noticeImportantBackground};
-    color: ${props => props.theme.noticeImportantText};
+  .notice-block.note {
+    background: ${props => props.theme.noticeNoteBackground};
+    color: ${props => props.theme.noticeNoteText};
 
     a {
       color: ${props => props.theme.noticeImportantText};

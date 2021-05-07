@@ -147,10 +147,10 @@ export default function blockMenuItems(
     },
     {
       name: "container_notice",
-      title: dictionary.infoNotice,
-      icon: InfoIcon,
-      keywords: "container_notice card information note",
-      attrs: { style: "info" },
+      title: dictionary.noteNotice,
+      icon: BeakerIcon,
+      keywords: "container_notice card note",
+      attrs: { style: "note" },
     },
     {
       name: "container_notice",
@@ -161,10 +161,10 @@ export default function blockMenuItems(
     },
     {
       name: "container_notice",
-      title: dictionary.importantNotice,
-      icon: BeakerIcon,
-      keywords: "container_notice card important",
-      attrs: { style: "important" },
+      title: dictionary.infoNotice,
+      icon: InfoIcon,
+      keywords: "container_notice card information note",
+      attrs: { style: "info" },
     },
     {
       name: "container_notice",

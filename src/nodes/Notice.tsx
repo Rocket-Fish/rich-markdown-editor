@@ -14,9 +14,9 @@ import Node from "./Node";
 export default class Notice extends Node {
   get styleOptions() {
     return Object.entries({
-      info: this.options.dictionary.info,
+      note: this.options.dictionary.note,
       tip: this.options.dictionary.tip,
-      important: this.options.dictionary.important,
+      info: this.options.dictionary.info,
       caution: this.options.dictionary.caution,
       warning: this.options.dictionary.warning,
     });
@@ -30,7 +30,7 @@ export default class Notice extends Node {
     return {
       attrs: {
         style: {
-          default: "info",
+          default: "note",
         },
       },
       content: "block+",
@@ -45,8 +45,8 @@ export default class Notice extends Node {
           getAttrs: (dom: HTMLDivElement) => ({
             style: dom.className.includes("tip")
               ? "tip"
-              : dom.className.includes("important")
-              ? "important"
+              : dom.className.includes("info")
+              ? "info"
               : dom.className.includes("caution")
               ? "caution"
               : dom.className.includes("warning")
@@ -71,7 +71,7 @@ export default class Notice extends Node {
 
         if (node.attrs.style === "tip") {
           component = <LightBulbIcon color="currentColor" />;
-        } else if (node.attrs.style === "important") {
+        } else if (node.attrs.style === "info") {
           component = <BeakerIcon color="currentColor" />;
         } else if (node.attrs.style === "caution") {
           component = <WarningIcon color="currentColor" />;
@@ -120,7 +120,7 @@ export default class Notice extends Node {
   }
 
   toMarkdown(state, node) {
-    state.write("\n:::" + (node.attrs.style || "info") + "\n");
+    state.write("\n:::" + (node.attrs.style || "note") + "\n");
     state.renderContent(node);
     state.ensureNewLine();
     state.write(":::");
